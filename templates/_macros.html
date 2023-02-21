@@ -24,4 +24,11 @@
     {{field.label}}
     {{field(**kwargs)|safe}}
 </div>
+{% if field.errors %}
+<ul>
+    {% for error in field.errors %}
+    <li style="color: red;"></li>
+    {{error}}
+    {% endfor%}
+</ul>
 {% endmacro %}
