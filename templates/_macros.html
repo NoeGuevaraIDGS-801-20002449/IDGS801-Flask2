@@ -18,6 +18,7 @@
 
 {% endmacro  %}
 
+
 {% macro render_field(field) %}
 <div>
     <label for="{{ name }}">{{placeholder}}</label>
@@ -27,8 +28,8 @@
 {% if field.errors %}
 <ul>
     {% for error in field.errors %}
-    <li style="color: red;"></li>
-    {{error}}
-    {% endfor%}
+    <li style="color: red;">{{error}}</li>
+    {% endfor %}
 </ul>
+{%endif%}
 {% endmacro %}

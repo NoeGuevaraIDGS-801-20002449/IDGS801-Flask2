@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{%block content%}
+<div class="col-xs-6">
+    {% from "_macros.html" import render_field %}
+    <form action="" method="post" novalidate>
+      {{form.csrf_token}}
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+            <div class="row control-group">
+                <h2>Ingresar colores</h2>
+                <label>Color en español:</label>
+                <input type="text" name="color_esp"><br>
+                <label>Color en inglés:</label>
+                <input type="text" name="color_eng"><br>
+                <button type="submit">Guardar</button>
+                <h2>Buscar color</h2>
+                <label>Color:</label>
+                <input type="text" name="color"><br>
+                <input type="radio" name="radio" value="esp" checked> Español
+                <input type="radio" name="radio" value="eng"> Inglés<br>
+                <button type="submit">Buscar</button>
+            </div>
+    </div>
+    </form>
+</div>
+{%endblock%}
